@@ -181,4 +181,5 @@ img {
   font-weight: 400;
   text-align: justify;
   word-spacing: -0.05em;
+  overflow: hidden;
 }

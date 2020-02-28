@@ -67,11 +67,12 @@ body {
   width: 940px;
   height: 601px;
   display: flex;
+  margin: 18px 40px 0;
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: space-between;
   overflow: hidden;
-  margin: 18px 40px 0;
+  
 }
 
 .portfolio__image {
