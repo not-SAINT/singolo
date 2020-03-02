@@ -314,6 +314,7 @@ body {
   font-family: "Lato", "Helvetica", sans-serif;
   font-weight: 400;
   text-align: justify;
+  letter-spacing: -0.02em
 }
 
 .employee:last-child > .social {
