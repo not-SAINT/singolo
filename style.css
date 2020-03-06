@@ -12,16 +12,12 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding-bottom: 15px;
+  padding: 23px 0 16px 40px;
   background-color: #2d303a;
   border-bottom: 6px solid #323746;
 }
 
 .logo {
-  margin: 26px 0 0 40px;
-}
-
-.logo h1 {
   font-size: 25px;
   line-height: 7px;
   color: #ffffff;
@@ -31,7 +27,7 @@ body {
   letter-spacing: -0.025em;
 }
 
-.logo h1::after {
+.logo::after {
   content: "*";
   font-size: 25px;
   color: #f06c64;
@@ -76,14 +72,18 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 53px 0 58px;
+  padding: 52px 0 58px;
   background-color: #f06c64;
   border-bottom: 6px solid #ea676b;
 }
 
 .slider > img {
-  padding: 0 2px 0 2px;
+  padding: 0 2px;
   margin: 0 16px 0 15px;
+}
+
+.slider > img:nth-child(2) {
+  padding-top: 1px;
 }
 
 .slider > a:first-child {
@@ -402,6 +402,8 @@ body {
   border: none;
   border-radius: 5px;
   background-color: #d6564f;
+  outline: 0;
+  outline-offset: 0;
 }
 
 .feedback__input::placeholder {
@@ -415,6 +417,16 @@ body {
 
 .feedback__input::-ms-input-placeholder {
   color: #f48c8f;
+}
+
+.feedback__input:required:invalid:focus {
+  box-shadow: 0 0 2px 2px #ff0000;
+  transition: 0.2s;
+}
+
+.feedback__input:required:valid:focus {
+  box-shadow: 0 0 2px 2px #71c066;
+  transition: 0.2s;
 }
 
 .feedback__textarea {
