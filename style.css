@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  
 }
 
 body {
@@ -15,7 +16,8 @@ body {
 header {
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 12;
+  scroll-margin-top: 60px;
 }
 
 .header {
@@ -89,22 +91,31 @@ header {
 }
 
 .slider__arrow {
+  width: 16px;
+  height: 27px;
   position: absolute;  
   top: calc(50% - 16px);
   z-index: 10;
 }
 
-.slider__arrow:hover {
-  -webkit-filter: drop-shadow(0 0 3px rgba(100, 0, 0, 0.5));
-  filter: drop-shadow(0 0 3px rgba(100, 0, 0, 0.5));
+.arrow_left {
+  top: calc(50% - 19px);
+  left: 42px;
+  background-image: url(./assets/images/arrow-left.svg);
 }
 
-.arrow_left {
-  left: 42px;
+.arrow_left:hover {
+  filter: drop-shadow(-20px 0 0 #3f1f1f80);
 }
 
 .arrow_right {
+  top: calc(50% - 19px);
   right: 40px;
+  background-image: url(./assets/images/arrow-right.svg);
+}
+
+.arrow_right:hover { 
+  filter: drop-shadow(20px 0 0 #3f1f1f80);
 }
 
 .slider__slide {
@@ -188,11 +199,12 @@ header {
   height: 494px;
   background-color: #f2f2f2;
   border-bottom: 6px solid #ffffff;
+  scroll-margin-top: 60px;
 }
 
 .services-head {
   margin: 0 40px;
-  padding-top: 43px;
+  padding-top: 43px;  
 }
 
 .services-head h2 {
@@ -277,6 +289,10 @@ header {
   border-bottom: 6px solid #323746;
 }
 
+.portfolio {
+  scroll-margin-top: 60px;
+}
+
 .portfolio__title {
   margin: 0;
   padding: 68px 0 0 40px;
@@ -301,14 +317,12 @@ header {
 .portfolio__link {
   margin: 0 5px 0 2px;
   padding: 5px 6px 3px 5px;
-
   font-size: 12px;
   line-height: 22px;
   color: #767e9e;
   font-family: "Lato", "Helvetica", sans-serif;
   font-weight: 400;
   text-align: left;
-
   border: 1px solid #666d89;
   border-radius: 4px;
 }
@@ -336,6 +350,10 @@ header {
 .portfolio__image {
   margin-bottom: 10px;
   border: 5px solid transparent;
+}
+
+.about-us {
+  scroll-margin-top: 60px;
 }
 
 .wrapper_about-us {
@@ -436,6 +454,10 @@ header {
 
 .ico_linkedin {
   background-image: url(./assets/images/icons/linkedin.svg);
+}
+
+.feedback {
+  scroll-margin-top: 60px;
 }
 
 .wrapper_feedback {
@@ -640,6 +662,7 @@ header {
   height: 100%;
   top: 0;
   left: 0;
+  z-index: 13;
   overflow: auto;
   background-color: #f8f2f22f;
 }
@@ -655,6 +678,7 @@ header {
   max-height: 90vh;
   top: 50%;
   left: 50%;
+  padding: 10px 20px;
   transform: translate(-50%, -50%);
   font-size: 18px;
   line-height: 22px;
@@ -686,6 +710,8 @@ header {
 }
 
 .message__body {
-  max-height: 80vh;
-  overflow: hidden;  
+  max-width: 1000px;
+  max-height: 70vh;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
