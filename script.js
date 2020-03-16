@@ -12,6 +12,8 @@ const menuSelected = (event) => {
   selectItem(event, 'active', menuElements);
 }
 
+menuElements.forEach(el => el.addEventListener('click', menuSelected));
+
 // slider
 const SLIDER = document.querySelector('.slider');
 const sliderWidth = 1020;
@@ -60,6 +62,8 @@ function moveSlider(direction) {
 }
 
 function slide(event) {
+  document.getElementById(event.target.closest('a').id).removeEventListener('click', slide);
+
   let direction = event.target.closest('a').id == "arrow_left" ? -1 : 1;
 
   moveSlider(direction);
@@ -67,7 +71,11 @@ function slide(event) {
   setTimeout( () => {
     draw(direction);  
     document.querySelectorAll('.slide__phone-area').forEach(el => el.addEventListener('click', switchDisplay));
-  }, 0);  
+  }, 10); 
+
+  document.querySelector('.slider__slide').addEventListener('transitionend', () => {    
+    document.getElementById(event.target.closest('a').id).addEventListener('click', slide);
+  });
 }
 
 document.querySelector('.arrow_left').addEventListener('click', slide);
@@ -100,11 +108,15 @@ const portfolioImageSelected = (event) => {
   selectItem(event, 'image_selected', portfolioImages);
 }
 
-const portfolioNav = document.querySelector('.portfolio__navigation').children;
+const portfolioNav = document.querySelectorAll('.portfolio__link');
+const portfolioNavSelected = (event) => {
+  selectItem(event, 'portfolio__link_selected', portfolioNav);
+}
+
 const images = document.querySelectorAll('.portfolio__image');
 const imagesDefaultSrc = Array.prototype.slice.call(images).map( el => el.src);
 
-const setImageRandom = () => {
+const setImageRandom = (event) => {
   let positionsSet = new Set(Array(12).fill(1).map((a,i) => i));
   let rndPosition = 0;
   let randomPositions =[];
@@ -118,10 +130,10 @@ const setImageRandom = () => {
   }
 
   for (let i = 0; i < images.length; i++)
-    images[i].src = imagesDefaultSrc[randomPositions[i]];  
+    images[i].src = imagesDefaultSrc[randomPositions[i]];    
 }
 
-const moveImageLeft = () => {
+const moveImageLeft = (event) => {
   let first = images[0].src;
   for (let i = 1; i <= images.length; i++)
     images[i - 1].src = images[i % images.length].src;    
@@ -129,7 +141,7 @@ const moveImageLeft = () => {
   images[images.length - 1].src = first;  
 }
 
-const moveImageRight = () => {
+const moveImageRight = (event) => {
   let last = images[images.length - 1].src;
   for (let i = images.length - 1; i > 0; i--)
     images[i].src = images[i - 1].src;    
@@ -137,9 +149,9 @@ const moveImageRight = () => {
   images[0].src = last;  
 }
 
-const setImageDefault = () => {
+const setImageDefault = (event) => {
   for (let i = 0; i < images.length; i++)
-    images[i].src = imagesDefaultSrc[i];    
+    images[i].src = imagesDefaultSrc[i];  
 }
 
 portfolioNav[0].addEventListener('click', setImageRandom);
@@ -147,8 +159,8 @@ portfolioNav[1].addEventListener('click', moveImageLeft);
 portfolioNav[2].addEventListener('click', moveImageRight);
 portfolioNav[3].addEventListener('click', setImageDefault);
 
-menuElements.forEach(el => el.addEventListener('click', menuSelected));
 portfolioImages.forEach(el => el.addEventListener('click', portfolioImageSelected));
+portfolioNav.forEach(el => el.addEventListener('click', portfolioNavSelected));
 
 // Get a Quote
 const OK_BUTTON = document.getElementById('ok-btn');
