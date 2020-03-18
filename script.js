@@ -212,8 +212,7 @@ const FORM = document.getElementById('feedback-form');
 
 FORM.addEventListener('submit', (e) => {
   e.preventDefault();
-  doModal();
-  FORM.reset();
+  doModal();  
   return false;
   }
 );
@@ -236,5 +235,6 @@ const doModal = () => {
 };
 
 OK_BUTTON.addEventListener('click', () => {
-  document.getElementById('overlay-block').classList.add('hidden');
+  FORM.reset();
+  document.getElementById('overlay-block').classList.add('hidden');  
 });
