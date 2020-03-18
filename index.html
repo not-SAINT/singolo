@@ -9,12 +9,12 @@
 </head>
 <body>
   <header>
-    <div class="wrapper">      
-        <div class="header" id="header">
+    <div class="wrapper" id="home">      
+        <div class="header">
             <h1 class="logo">SINGOLO</h1>        
           <nav>
             <ul class="navigation">
-              <li><a class="navigation__link" href="#header">HOME</a></li>
+              <li><a class="navigation__link active" href="#home">HOME</a></li>
               <li><a class="navigation__link" href="#services">SERVICES</a></li>
               <li><a class="navigation__link" href="#portfolio">PORTFOLIO</a></li>
               <li><a class="navigation__link" href="#about">ABOUT</a></li>
@@ -39,7 +39,9 @@
           <img class="slide__phone-triple" src="./assets/images/slide2.png" alt="slide-2">
         </div>     
       </div>
-      <div class="services" id="services">
+    </div>
+    <div class="wrapper" id="services">
+      <div class="services">
         <section class="services-head">
           <h2 class="title_text">Our Services</h2>
           <p class="description_text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
@@ -84,17 +86,17 @@
         </div>
       </div>
     </div>
-    <section class="portfolio" id="portfolio">
-      <div class="wrapper wrapper_portfolio">
+    <section class="portfolio">
+      <div class="wrapper wrapper_portfolio" id="portfolio">
         <h2 class="portfolio__title title_text">Portfolio</h2>
         <p class="portfolio__description description_text">
           Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
         </p>
         <div class="portfolio__navigation">
-          <span class="portfolio__link">All</span>
-          <span class="portfolio__link">Web Design</span>
-          <span class="portfolio__link">Graphic Design</span>
-          <span class="portfolio__link">Artwork</span>
+          <span class="portfolio__link" id="all">All</span>
+          <span class="portfolio__link" id="web-design">Web Design</span>
+          <span class="portfolio__link" id="graphic-design">Graphic Design</span>
+          <span class="portfolio__link" id="artwork">Artwork</span>
         </div>
         <div class="layout-4-column">
           <img  class="portfolio__image" src="./assets/images/portfolio/Project9.png" alt="project" width="220" height="187">
@@ -112,8 +114,8 @@
         </div>
       </div>
     </section>
-    <section class="about-us" id="about">
-      <div class="wrapper wrapper_about-us">
+    <section class="about-us">
+      <div class="wrapper wrapper_about-us" id="about">
         <h2 class="about-us__title title_text">About Us</h2>
         <p class="about-us__description description_text">
           Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
@@ -165,8 +167,8 @@
         </div>      
       </div>  
     </section> 
-    <section class="feedback" id="contact">
-      <div class="wrapper wrapper_feedback">
+    <section class="feedback">
+      <div class="wrapper wrapper_feedback" id="contact">
         <h2 class="feedback__title title_text">Get a Quote</h2>
         <p class="feedback__description description_text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
         <div class="layout-2-column">
