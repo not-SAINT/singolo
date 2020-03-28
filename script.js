@@ -11,6 +11,7 @@ const menuElements = document.querySelectorAll('.navigation > li > a');
 
 const menuSelected = (event) => {
   selectItem(event, 'active', menuElements);
+  document.getElementById('menu-toggle').checked = false;
 }
 
 let blocksPosition = [];

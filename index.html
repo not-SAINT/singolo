@@ -13,6 +13,7 @@
         <div class="header">
           <input type="checkbox" id="menu-toggle">
           <label class="menu-toggle" for="menu-toggle"></label>
+          <div class="hidden" id="blur-block"></div>
           <div class="burger">
             <span class="burger__line"></span>
           </div>
@@ -174,7 +175,7 @@
               <input class="feedback__input" type="email" id="email" name="email" placeholder="Email (Required)" pattern="^[\w\.]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" required>
               <input class="feedback__input" type="text" id="subject" name="subject" placeholder="Subject">
               <textarea class="feedback__input feedback__textarea" id="describe" name="describe" cols="30" rows="10" placeholder="Describe your project in detail..."></textarea>
-              <button class="feedback__input feedback__submit" type="submit" id="send-btn">Send</button>
+              <button class="feedback__input feedback__submit" type="submit" id="send-btn">SEND</button>
             </form>
           </div>                 
           <div class="contact-information">
@@ -210,6 +211,7 @@
       <button class="ok-btn" type="button" id="ok-btn">Ok</button>
     </div>            
   </div>
+  
   <script src="./script.js"></script>
 </body>
 </html>
